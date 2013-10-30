@@ -1,6 +1,6 @@
 {% set redis = pillar.get('redis', {}) -%}
 {% set version = redis.get('version', 'stable') -%}
-{% set checksum = redis.get('checksum', 'sha1=12755897666792eb9e1a0b7e4589eb1cb8e229d0') -%}
+{% set checksum = redis.get('checksum', 'md5=5a4d2e64b16295e9862a0a44ff9539d1') -%}
 {% set root = redis.get('root', '/usr/local') -%}
 
 redis-dependencies:
