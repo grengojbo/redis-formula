@@ -2,3 +2,4 @@ redis:
   home: /var/lib/redis
   user: redis
   port: 6777
+  bind: 127.0.0.1
