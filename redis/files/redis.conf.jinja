@@ -1,14 +1,12 @@
 # Redis config
 {% set redis  = pillar.get('redis', {}) -%}
 {% set vm     = redis.get('vm', {}) -%}
-daemonize yes
+daemonize no
 
 pidfile {{ redis.get('pidfile', '/var/db/redis/redis.pid') }}
 port {{ redis.get('port', 6379) }}
 
-{% if redis['bind'] is defined %}
-bind {{ redis['bind'] }}
-{% endif -%}
+bind {{ redis.get('bind', '127.0.0.1') }}
 
 loglevel {{ redis.get('loglevel', 'notice') }}
 logfile {{ redis.get('logfile', '/var/log/redis/redis.log') }}
